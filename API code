@@ -7,11 +7,11 @@ from torchvision import transforms
 app = FastAPI()
 
 # Load the model
-model = torch.load("model_weights.pth", map_location=torch.device("cpu"))
+model = torch.load("model_weights.h5", map_location=torch.device("cpu"))
 model.eval()
 
 # Class labels
-class_names = ['Benign', 'Malignant', 'Normal']  # Replace with your actual classes
+class_names = ['lung_aca', 'lung_n', 'lung_scc']  # Replace with your actual classes
 
 # Image transformation
 transform = transforms.Compose([
